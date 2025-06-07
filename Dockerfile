@@ -9,6 +9,8 @@ RUN apt-get update && \
         latexmk \
         ca-certificates \
         git \
+        python3 \
+        python3-pip \
         && rm -rf /var/lib/apt/lists/*
 
         
@@ -18,5 +20,5 @@ WORKDIR /workspace
 # Copy the entire project (except files in .dockerignore) into the container
 COPY . /workspace/
 
-# Default command: compile all .tex files in 2370_question_banks to PDFs
-CMD ["sh", "-c", "for f in 2370_question_banks/*.tex; do latexmk -pdf -output-directory=2370_question_banks \"$f\"; done"]
+# Default command: run the build_all.py script
+CMD ["python3", "build_all.py"]
