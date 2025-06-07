@@ -8,8 +8,10 @@ RUN apt-get update && \
         texlive-latex-recommended \
         latexmk \
         ca-certificates \
+        git \
         && rm -rf /var/lib/apt/lists/*
 
+        
 # Set the working directory
 WORKDIR /workspace
 
