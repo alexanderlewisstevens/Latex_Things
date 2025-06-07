@@ -1,0 +1,170 @@
+% Streamlined LaTeX template for question banks
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{amsmath, amssymb}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% Header strip for compact info
+\lhead{CS/Discrete Math}
+\chead{Quiz 5 Practice Questions}
+\rhead{Practice-Problem-Bank}
+\cfoot{\thepage}
+
+\begin{document}
+
+\section*{Problems}
+
+\subsection*{1. Divide and Conquer Time Analysis}
+\begin{lstlisting}
+def process_data(arr):
+    if len(arr) == 0:
+        return 0
+    if len(arr) == 1:
+        return 1 if arr[0] > 0 else 0
+    mid = len(arr) // 2
+    left = process_data(arr[:mid])
+    right = process_data(arr[mid:])
+    return left + right
+\end{lstlisting}
+\textbf{Recurrence:} \underline{\hspace{10cm}} \\
+\textbf{Question:} Based on how the array is divided and how long the combine step takes, write a recurrence for the running time of this function.
+
+\vspace{2em}
+
+\subsection*{2. Divide and Conquer Time Analysis}
+\begin{lstlisting}
+def process_data(arr):
+    if len(arr) < 3:
+        return arr
+    a = process_data(arr[:len(arr)//2])
+    b = process_data(arr[len(arr)//2:len(arr)//2 + 1])
+    c = process_data(arr[len(arr)//2 + 1:])
+    return a + b + c
+\end{lstlisting}
+\textbf{Recurrence:} \underline{\hspace{10cm}} \\
+\textbf{Question:} Based on how the array is divided and how long the combine step takes, write a recurrence for the running time of this function.
+
+\vspace{2em}
+
+\subsection*{3. Divide and Conquer Time Analysis}
+\begin{lstlisting}
+def process_data(arr):
+    if len(arr) <= 2:
+        return arr
+    mid = len(arr) // 2
+    left = process_data(arr[:mid])
+    right = process_data(arr[mid:])
+    return left + right
+\end{lstlisting}
+\textbf{Recurrence:} \underline{\hspace{10cm}} \\
+\textbf{Question:} Based on how the array is divided and how long the combine step takes, write a recurrence for the running time of this function.
+
+\vspace{2em}
+
+\subsection*{4. Divide and Conquer Time Analysis}
+\begin{lstlisting}
+def process_data(arr):
+    if len(arr) <= 1:
+        return arr
+    third = len(arr) // 3
+    a = process_data(arr[:third])
+    b = process_data(arr[third:2*third])
+    c = process_data(arr[2*third:])
+    return a + b + c
+\end{lstlisting}
+\textbf{Recurrence:} \underline{\hspace{10cm}} \\
+\textbf{Question:} Based on how the array is divided and how long the combine step takes, write a recurrence for the running time of this function.
+
+\vspace{2em}
+
+\subsection*{5. Divide and Conquer Time Analysis}
+\begin{lstlisting}
+def process_data(points):
+    if len(points) <= 3:
+        return brute_force(points)
+    mid = len(points) // 2
+    left = process_data(points[:mid])
+    right = process_data(points[mid:])
+    cross = find_cross_pairs(points, mid)
+    return left + right + cross
+\end{lstlisting}
+\textbf{Recurrence:} \underline{\hspace{10cm}} \\
+\textbf{Question:} Based on how the array is divided and how long the combine step takes, write a recurrence for the running time of this function. Assume that $find\_cross\_pairs$ runs in $O(n)$ time.
+
+\vspace{2em}
+
+\subsection*{6. Divide and Conquer Time Analysis}
+\begin{lstlisting}
+def process_data(arr):
+    if len(arr) <= 1:
+        return arr[0]
+    mid = len(arr) // 2
+    left = process_data(arr[:mid])
+    right = process_data(arr[mid:])
+    return 0.7 * left + 0.3 * right
+\end{lstlisting}
+\textbf{Recurrence:} \underline{\hspace{10cm}} \\
+\textbf{Question:} Based on how the array is divided and how long the combine step takes, write a recurrence for the running time of this function.
+
+\vspace{2em}
+
+\subsection*{7. Divide and Conquer Time Analysis}
+\begin{lstlisting}
+def process_data(data):
+    if len(data) <= 1:
+        return dict(data)
+    mid = len(data) // 2
+    left = process_data(data[:mid])
+    right = process_data(data[mid:])
+    for key in right:
+        left[key] = right[key]
+    return left
+\end{lstlisting}
+\textbf{Recurrence:} \underline{\hspace{10cm}} \\
+\textbf{Question:} Based on how the array is divided and how long the combine step takes, write a recurrence for the running time of this function.
+
+\vspace{2em}
+
+\subsection*{8. Counting Sort Example}
+\begin{lstlisting}
+arr = [4, 2, 2, 8, 3, 3, 1]
+\end{lstlisting}
+\textbf{Question:} Show how counting sort would sort this list step by step. What is the running time of counting sort in terms of $n$ (length of the array) and $k$ (maximum key value)? What assumptions must be true about the input data for counting sort to be efficient?
+
+\vspace{2em}
+
+\subsection*{9. When to Use Counting Sort}
+\begin{lstlisting}
+arr = [15, 14, 16, 14, 15]
+\end{lstlisting}
+\textbf{Question:} Can counting sort be used efficiently on this input? What is the running time in terms of $n$ and $k$? What assumptions about the data must hold for counting sort to be efficient?
+
+\vspace{2em}
+
+\subsection*{10. Radix Sort on Strings}
+\begin{lstlisting}
+arr = ['bca', 'cab', 'abc', 'acb']
+\end{lstlisting}
+\textbf{Question:} Show the steps radix sort would follow when sorting this list of 3-letter strings. What is the running time of radix sort in terms of $n$ (number of strings) and $d$ (number of characters per string)? What assumptions must be true about the input for radix sort to be efficient?
+
+\vspace{2em}
+
+\subsection*{11. Bucket Sort on Decimals}
+\begin{lstlisting}
+arr = [0.13, 0.25, 0.22, 0.45, 0.21, 0.24]
+\end{lstlisting}
+\textbf{Question:} Show how bucket sort would process this list. What is the running time of bucket sort in terms of $n$? What assumptions about the distribution of input data must hold for bucket sort to be efficient?
+
+\vspace{2em}
+
+\subsection*{12. Counting Sort - Characters}
+\begin{lstlisting}
+arr = ['d', 'a', 'c', 'b', 'a']
+\end{lstlisting}
+\textbf{Question:} Show how counting sort would sort this list of lowercase letters assuming they are converted to ASCII codes. What is the running time in terms of $n$ (number of characters) and $k$ (range of ASCII codes)? What assumptions must be true for counting sort to be efficient?
+
+\end{document}

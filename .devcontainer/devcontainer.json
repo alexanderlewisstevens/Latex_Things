@@ -1,0 +1,14 @@
+{
+    "name": "LaTeX PDF Builder Dev Container",
+    "build": {
+        "dockerfile": "../Dockerfile"
+    },
+    "workspaceFolder": "/workspace",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "james-yu.latex-workshop"
+    ],
+    "postCreateCommand": "pip install --upgrade pip"
+}

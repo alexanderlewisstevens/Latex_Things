@@ -1,0 +1,104 @@
+% Streamlined LaTeX template for question banks
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{amsmath, amssymb}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% Header strip for compact info
+\lhead{CS/Discrete Math}
+\chead{Quiz 1 Practice Questions}
+\rhead{Practice-Problem-Bank}
+\cfoot{\thepage}
+
+\begin{document}
+
+\section*{Concepts}
+\begin{itemize}[leftmargin=1.5em]
+  \item Brute Force Algorithms: Practice solving the algorithms below using brute force. They don't need to be correct or efficient.
+  \item Understand the basics of the three sorting algorithms:
+  \begin{itemize}
+    \item Be ready to apply the algorithms to an input
+    \item Understand what input gives the best and worst case for each algorithm
+    \item Understand the procedures each algorithm uses and be ready to write pseudocode
+  \end{itemize}
+\end{itemize}
+
+\section*{Problems}
+
+\subsection*{1. Two Sum}
+Given an array of integers \texttt{nums} and an integer \texttt{target}, return the indices of the two numbers such that they add up to \texttt{target}. Each input has exactly one solution, and you may not use the same element twice.
+
+\textbf{Example:}
+\begin{verbatim}
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+\end{verbatim}
+
+\subsection*{2. Best Time to Buy and Sell Stock}
+Given an array \texttt{prices} where \texttt{prices[i]} is the price of a stock on the \texttt{i-th} day, find the maximum profit from a single buy and sell operation. You must buy before you sell.
+
+\textbf{Example:}
+\begin{verbatim}
+Input: prices = [7,1,5,3,6,4]
+Output: 5 (buy at 1, sell at 6)
+\end{verbatim}
+
+\subsection*{3. Contains Duplicate}
+Given an array of integers, check if any value appears at least twice.
+
+\textbf{Example:}
+\begin{verbatim}
+Input: [1, 2, 3, 1]
+Output: True
+\end{verbatim}
+
+\subsection*{4. Maximum Subarray}
+Given an integer array \texttt{nums}, find the contiguous subarray (containing at least one number) with the largest sum.
+
+\textbf{Example:}
+\begin{verbatim}
+Input: [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6 ([4,-1,2,1])
+\end{verbatim}
+
+\subsection*{5. Longest Common Prefix}
+Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string \texttt{""}.
+
+\textbf{Example:}
+\begin{verbatim}
+Input: ["flower","flow","flight"]
+Output: "fl"
+\end{verbatim}
+
+\subsection*{6. Valid Palindrome}
+Given a string, determine if it is a palindrome considering only alphanumeric characters and ignoring cases.
+
+\textbf{Example:}
+\begin{verbatim}
+Input: "A man, a plan, a canal: Panama"
+Output: True
+\end{verbatim}
+
+\subsection*{7. First Unique Character in a String}
+Given a string, find the first non-repeating character and return its index. If it does not exist, return -1.
+
+\textbf{Example:}
+\begin{verbatim}
+Input: "leetcode"
+Output: 0
+\end{verbatim}
+
+\subsection*{8. Intersection of Two Arrays}
+Given two arrays, return their intersection (unique elements only).
+
+\textbf{Example:}
+\begin{verbatim}
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2]
+\end{verbatim}
+
+\end{document}
